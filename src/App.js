@@ -1,12 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 
+import { ContextProvider } from './context'
 import Photos from './pages/Photos'
 import Cart from './pages/Cart'
-
+import Navbar from './componenets/Navbar';
+import './styles.css'
 function App() {
   return (
-    <div>
+    <ContextProvider>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Photos />
@@ -15,7 +18,7 @@ function App() {
           <Cart />
         </Route>
       </Switch>
-    </div>
+    </ContextProvider>
   )
 }
 
