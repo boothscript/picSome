@@ -1,9 +1,10 @@
 import React from 'react'
+import Image from './Image'
 
 function ImageRow(props) {
 
     const images = props.imgList.map((imgObj) => (
-        <img key={imgObj.id} src={imgObj.url} alt="" />
+        <Image imgObj={imgObj} />
     ))
 
     return (

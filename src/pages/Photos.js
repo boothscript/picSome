@@ -6,7 +6,7 @@ import ImageRow from '../componenets/ImageRow'
 
 
 function Photos() {
-    const photoList = useContext(Context)
+    const { photoList } = useContext(Context)
     const arrayChunks = []
 
     // splits array into chunks for image rows
