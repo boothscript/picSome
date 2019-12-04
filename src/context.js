@@ -40,14 +40,12 @@ function ContextProvider(props) {
 
     }
     function removeFromCart(obj) {
-        console.log('remove')
         setCartList(prevList => {
             return prevList.filter((item) => item.id !== obj.id)
         })
     }
 
     function clearCart() {
-        console.log('clearing')
         setCartList([])
     }
 

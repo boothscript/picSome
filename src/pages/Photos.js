@@ -8,6 +8,7 @@ import ImageRow from '../componenets/ImageRow'
 function Photos() {
     const { photoList } = useContext(Context)
     const arrayChunks = []
+    const titles = ["Nature", "Fantastical", "Space"]
 
     // splits array into chunks for image rows
     var i, j, temparray, chunk = 10
@@ -16,13 +17,12 @@ function Photos() {
         arrayChunks.push(temparray)
     }
 
-    const imageRows = arrayChunks.map((arrayChunk) => (
-        <ImageRow title="heading" imgList={arrayChunk} />
+    const imageRows = arrayChunks.map((arrayChunk, index) => (
+        <ImageRow title={titles[index]} imgList={arrayChunk} key={index} />
     ))
 
     return (
         <>
-            <h1>Photos Page</h1>
             {imageRows}
         </>
     )

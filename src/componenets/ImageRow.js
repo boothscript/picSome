@@ -4,7 +4,7 @@ import Image from './Image'
 function ImageRow(props) {
 
     const images = props.imgList.map((imgObj) => (
-        <Image imgObj={imgObj} />
+        <Image imgObj={imgObj} key={imgObj.id} />
     ))
 
     return (

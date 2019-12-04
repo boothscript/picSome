@@ -1,38 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
+
+body {
+    font-family: Solway;
+}
+
 /* COLORS */
 
 .bg-dark{
-    background-color: #032535;
-}
-.text-dark{
-    color: #032535;
-}
-.bg-color1{
-    background-color: #ffb515;
-}
-.text-color1{
-    color: #ffb515;
-}
-.bg-color2{
-    background-color: #ff9a00;
-}
-.text-color2{
-    color: #ff9a00;
-}
-.bg-color3{
-    background-color: #ff5700;
-}
-.text-color3{
-    color: #ff5700;
-}
-.bg-color4{
-    background-color: #da4302;
-}
-.text-color4{
-    color: #da4302;
-}
-
-.bg-white{
-    background-color:whitesmoke;
+    background-color: #032535
 }
 .text-white{
     color: whitesmoke;
@@ -40,12 +15,14 @@
 
 /* NAVBAR */
 
-
 .navbar{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    margin: -1rem;
+    margin-bottom: 1rem;
 }
 
 .navbar > h1 {
@@ -83,6 +60,10 @@
 
 .img-wrap{
     position: relative;
+}
+
+.img-row > h2{
+    padding-left: 1rem;
 }
 
 .image > img {

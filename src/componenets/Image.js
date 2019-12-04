@@ -5,9 +5,11 @@ import { Context } from '../context'
 
 function Image(props) {
 
-    const [isHovered, imgHoverOn, imgHoverOff] = useHover()
-    const [favHovered, favHoverOn, favHoverOff] = useHover()
-    const [buyHovered, buyHoverOn, buyHoverOff] = useHover()
+
+    const [isHovered, imgRef] = useHover()
+    const [favHovered, favRef] = useHover()
+    const [buyHovered, buyRef] = useHover()
+
     const { favorite, addToCart, cartList, removeFromCart } = useContext(Context)
 
 
@@ -29,7 +31,6 @@ function Image(props) {
     }
 
     function isImageInCart(id) {
-        console.log('cart', cartList)
         return cartList.some((item) => item.id === id)
     }
 
@@ -37,8 +38,7 @@ function Image(props) {
     return (
         <div
             className="img-wrap"
-            onMouseEnter={imgHoverOn}
-            onMouseLeave={imgHoverOff}
+            ref={imgRef}
         >
             <div className="image">
                 <img key={props.imgObj.id} src={props.imgObj.url} alt="" />
@@ -50,17 +50,15 @@ function Image(props) {
                 &nbsp;
             </div>
             <i
+                ref={favRef}
                 className={`ri-heart-${favIcon} icon-left`}
                 style={favStyle}
-                onMouseEnter={favHoverOn}
-                onMouseLeave={favHoverOff}
                 onClick={() => favorite(props.imgObj.id)}
             />
             <i
+                ref={buyRef}
                 className={`ri-add-circle-${buyIcon} icon-right`}
                 style={buyStyle}
-                onMouseEnter={buyHoverOn}
-                onMouseLeave={buyHoverOff}
                 onClick={() => {
                     if (isImageInCart(props.imgObj.id)) {
                         removeFromCart(props.imgObj)
